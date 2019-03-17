@@ -70,6 +70,25 @@ action "Push image to GCR" {
     APPLICATION_NAME = "gcloud-example-app"
   }
   args = ["docker push gcr.io/$PROJECT_ID/$APPLICATION_NAME"]
+  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
 }
 
 action "Load GKE kube credentials" {
