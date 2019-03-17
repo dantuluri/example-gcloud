@@ -121,8 +121,58 @@ action "Load GKE kube credentials" {
   uses = "actions/gcloud/cli@master"
   env = {
     APPLICATION_NAME = "gcloud-example2"
-    CLUSTER_NAME = "deploycluster"
-    PROJECT_ID = "sd1"
+    PROJECT_ID = "suryad"
+    CLUSTER_NAME = "sd1"
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
 
     # Build
 
