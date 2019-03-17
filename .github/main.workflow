@@ -88,3 +88,15 @@ action "Verify GKE deployment" {
   }
   args = "rollout status deployment/app-example"
 }
+
+workflow "New workflow" {
+  on = "push"
+  resolves = ["new-action"]
+}
+
+action "new-action" {
+  uses = "owner/repo/path@ref"
+}# Build
+# GKE
+# Build
+# GKE
