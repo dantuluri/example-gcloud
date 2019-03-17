@@ -310,7 +310,229 @@ action "Deploy to GKE" {
   env = {
     PROJECT_ID = "env"
     APPLICATION_NAME = "gcloud-example2"
-    DEPLOYMENT_NAME = "app-example"
+    DEPLOYMENT_NAME = "deploy-app"
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
   }
   runs = "sh -l -c"
   args = ["SHORT_REF=$(echo ${GITHUB_SHA} | head -c7) && cat $GITHUB_WORKSPACE/config.yml | sed 's/PROJECT_ID/'\"$PROJECT_ID\"'/' | sed 's/APPLICATION_NAME/'\"$APPLICATION_NAME\"'/' | sed 's/TAG/'\"$SHORT_REF\"'/' | kubectl apply -f - "]
@@ -392,11 +614,305 @@ action "Deploy to GKE" {
 action "Verify GKE deployment" {
   needs = ["Deploy to GKE"]
   uses = "docker://gcr.io/cloud-builders/kubectl"
-  env = {
-    DEPLOYMENT_NAME = "app-example"
-  }
   args = "rollout status deployment/$DEPLOYMENT_NAME"
   secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+  env = {
+    DEPLOYMENT_NAME = "deploy-app"
+  }
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
 
   # Build
 
