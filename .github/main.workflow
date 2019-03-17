@@ -23,6 +23,11 @@ action "Deploy branch filter" {
 
 action "Setup Google Cloud" {
   uses = "actions/gcloud/auth@master"
+  secrets = ["GCLOUD_AUTH", "GITHUB_TOKEN"]
+
+  # Build
+
+  # GKE
 }
 
 action "Tag image for GCR" {
