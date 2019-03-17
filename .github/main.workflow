@@ -120,9 +120,59 @@ action "Load GKE kube credentials" {
   needs = ["Setup Google Cloud", "Push image to GCR"]
   uses = "actions/gcloud/cli@master"
   env = {
-    PROJECT_ID = "suryad"
     APPLICATION_NAME = "gcloud-example2"
     CLUSTER_NAME = "deploycluster"
+    PROJECT_ID = "sd1"
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
 
     # Build
 
