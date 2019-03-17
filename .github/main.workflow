@@ -23,7 +23,10 @@ action "Deploy branch filter" {
 
 action "Setup Google Cloud" {
   uses = "actions/gcloud/auth@master"
-  secrets = ["GCLOUD_AUTH", "GITHUB_TOKEN"]
+  secrets = [
+    "GITHUB_TOKEN",
+    "GCLOUD_AUTH",
+  ]
 
   # Build
 
