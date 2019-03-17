@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app-example
-        image: gcr.io/PROJECT_ID/APPLICATION_NAME:TAG
+        image: gcr.io/suryad/APPLICATION_NAME:TAG
         ports:
         - containerPort: 5000
         resources:
