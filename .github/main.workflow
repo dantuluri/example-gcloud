@@ -395,7 +395,7 @@ action "Verify GKE deployment" {
   env = {
     DEPLOYMENT_NAME = "app-example"
   }
-  args = "rollout status deployment/app-example"
+  args = "rollout status deployment/$DEPLOYMENT_NAME"
   secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
 
   # Build
