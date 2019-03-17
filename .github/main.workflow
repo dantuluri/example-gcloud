@@ -40,8 +40,8 @@ action "Tag image for GCR" {
   needs = ["Setup Google Cloud", "Build Docker image"]
   uses = "actions/docker/tag@master"
   env = {
-    PROJECT_ID = "fifth-byte-211221"
-    APPLICATION_NAME = "gcloud-example-app"
+    PROJECT_ID = "six-byte-211221"
+    APPLICATION_NAME = "gcloud-example2"
   }
   args = ["gcloud-example-app", "gcr.io/$PROJECT_ID/$APPLICATION_NAME"]
 }
