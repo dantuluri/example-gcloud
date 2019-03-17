@@ -99,6 +99,43 @@ action "Load GKE kube credentials" {
     APPLICATION_NAME = "gcloud-example2"
   }
   args = "container clusters get-credentials $CLUSTER_NAME --zone us-central1-a --project $PROJECT_ID"
+  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
 }
 
 # TODO Add Action to start GitHub Deploy
