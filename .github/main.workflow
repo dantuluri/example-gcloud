@@ -614,10 +614,9 @@ action "Deploy to GKE" {
 action "Verify GKE deployment" {
   needs = ["Deploy to GKE"]
   uses = "docker://gcr.io/cloud-builders/kubectl"
-  args = "rollout status deployment/deploy-app"
+  args = "rollout status deployment/app-example"
   secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
-  env = {
-  }
+  env = {}
 
   # Build
 
