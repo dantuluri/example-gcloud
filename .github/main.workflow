@@ -88,27 +88,3 @@ action "Verify GKE deployment" {
   }
   args = "rollout status deployment/app-example"
 }
-
-workflow "New workflow" {
-  on = "push"
-  resolves = ["GitHub Action for Google Cloud"]
-
-  # Build
-
-  # GKE
-
-  # Build
-
-  # GKE
-}
-
-action "GitHub Action for Google Cloud" {
-  uses = "actions/gcloud/cli@ba93088eb19c4a04638102a838312bb32de0b052"
-}# Build
-# GKE
-# Build
-# GKE
-# Build
-# GKE
-# Build
-# GKE
