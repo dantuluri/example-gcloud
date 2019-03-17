@@ -614,9 +614,525 @@ action "Deploy to GKE" {
 action "Verify GKE deployment" {
   needs = ["Deploy to GKE"]
   uses = "docker://gcr.io/cloud-builders/kubectl"
-  args = "rollout status deployment/app-example"
   secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
   env = {}
+  runs = "rollout status deployment/app-example"
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
 
   # Build
 
