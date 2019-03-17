@@ -10,6 +10,9 @@ workflow "Build and Deploy" {
 action "Build Docker image" {
   uses = "actions/docker/cli@master"
   args = ["build", "-t", "gcloud-example-app", "."]
+  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+
+  # Build
 }
 
 # Deploy Filter
@@ -47,6 +50,15 @@ action "Set Credential Helper for Docker" {
   needs = ["Setup Google Cloud", "Tag image for GCR"]
   uses = "actions/gcloud/cli@master"
   args = ["auth", "configure-docker", "--quiet"]
+  secrets = ["GCLOUD_AUTH", "GITHUB_TOKEN"]
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
 }
 
 action "Push image to GCR" {
