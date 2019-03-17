@@ -2,7 +2,7 @@ workflow "Build and Deploy" {
   on = "push"
   resolves = [
     "Verify GKE deployment",
-  ] 
+  ]
 }
 
 # Build
@@ -23,7 +23,6 @@ action "Deploy branch filter" {
 
 action "Setup Google Cloud" {
   uses = "actions/gcloud/auth@master"
-  secrets = ["GCLOUD_AUTH"]
 }
 
 action "Tag image for GCR" {
