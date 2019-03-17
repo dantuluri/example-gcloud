@@ -66,8 +66,8 @@ action "Push image to GCR" {
   uses = "actions/gcloud/cli@master"
   runs = "sh -c"
   env = {
-    PROJECT_ID = "fifth-byte-211221"
-    APPLICATION_NAME = "gcloud-example-app"
+    PROJECT_ID = "six-byte-211221"
+    APPLICATION_NAME = "gcloud-example2"
   }
   args = ["docker push gcr.io/$PROJECT_ID/$APPLICATION_NAME"]
   secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
@@ -95,8 +95,8 @@ action "Load GKE kube credentials" {
   needs = ["Setup Google Cloud", "Push image to GCR"]
   uses = "actions/gcloud/cli@master"
   env = {
-    PROJECT_ID = "fifth-byte-211221"
-    CLUSTER_NAME = "workflow-example-cluster"
+    PROJECT_ID = "six-byte-211221"
+    APPLICATION_NAME = "gcloud-example2"
   }
   args = "container clusters get-credentials $CLUSTER_NAME --zone us-central1-a --project $PROJECT_ID"
 }
@@ -106,8 +106,8 @@ action "Deploy to GKE" {
   needs = ["Push image to GCR", "Load GKE kube credentials"]
   uses = "docker://gcr.io/cloud-builders/kubectl"
   env = {
-    PROJECT_ID = "fifth-byte-211221"
-    APPLICATION_NAME = "gcloud-example-app"
+    PROJECT_ID = "six-byte-211221"
+    APPLICATION_NAME = "gcloud-example2"
     DEPLOYMENT_NAME = "app-example"
   }
   runs = "sh -l -c"
