@@ -10,7 +10,10 @@ workflow "Build and Deploy" {
 action "Build Docker image" {
   uses = "actions/docker/cli@master"
   args = ["build", "-t", "gcloud-example-app", "."]
-  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+  secrets = [
+    "GITHUB_TOKEN",
+    "GCLOUD_AUTH",
+  ]
 
   # Build
 }
@@ -20,6 +23,11 @@ action "Deploy branch filter" {
   needs = ["Set Credential Helper for Docker"]
   uses = "actions/bin/filter@master"
   args = "branch master"
+  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+
+  # Build
+
+  # Build
 }
 
 # GKE
@@ -44,13 +52,27 @@ action "Tag image for GCR" {
     APPLICATION_NAME = "gcloud-example2"
   }
   args = ["gcloud-example-app", "gcr.io/$PROJECT_ID/$APPLICATION_NAME"]
+  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
 }
 
 action "Set Credential Helper for Docker" {
   needs = ["Setup Google Cloud", "Tag image for GCR"]
   uses = "actions/gcloud/cli@master"
   args = ["auth", "configure-docker", "--quiet"]
-  secrets = ["GCLOUD_AUTH", "GITHUB_TOKEN"]
+  secrets = [
+    "GITHUB_TOKEN",
+    "GCLOUD_AUTH",
+  ]
 
   # Build
 
@@ -70,7 +92,10 @@ action "Push image to GCR" {
     APPLICATION_NAME = "gcloud-example2"
   }
   args = ["docker push gcr.io/$PROJECT_ID/$APPLICATION_NAME"]
-  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+  secrets = [
+    "GITHUB_TOKEN",
+    "GCLOUD_AUTH",
+  ]
 
   # Build
 
@@ -97,9 +122,49 @@ action "Load GKE kube credentials" {
   env = {
     PROJECT_ID = "suryad"
     APPLICATION_NAME = "gcloud-example2"
+    CLUSTER_NAME = "deploycluster"
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
+
+    # Build
+
+    # GKE
   }
-  args = "container clusters get-credentials $CLUSTER_NAME --zone us-central1-a --project $PROJECT_ID"
-  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+  args = "container clusters get-credentials $CLUSTER_NAME --zone us-west1-a --project $PROJECT_ID"
+  secrets = [
+    "GITHUB_TOKEN",
+    "GCLOUD_AUTH",
+  ]
 
   # Build
 
@@ -149,6 +214,79 @@ action "Deploy to GKE" {
   }
   runs = "sh -l -c"
   args = ["SHORT_REF=$(echo ${GITHUB_SHA} | head -c7) && cat $GITHUB_WORKSPACE/config.yml | sed 's/PROJECT_ID/'\"$PROJECT_ID\"'/' | sed 's/APPLICATION_NAME/'\"$APPLICATION_NAME\"'/' | sed 's/TAG/'\"$SHORT_REF\"'/' | kubectl apply -f - "]
+  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
 }
 
 action "Verify GKE deployment" {
@@ -158,4 +296,77 @@ action "Verify GKE deployment" {
     DEPLOYMENT_NAME = "app-example"
   }
   args = "rollout status deployment/app-example"
+  secrets = ["GITHUB_TOKEN", "GCLOUD_AUTH"]
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
+
+  # Build
+
+  # GKE
 }
